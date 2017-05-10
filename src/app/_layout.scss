@@ -1,0 +1,56 @@
+.fullheight {
+    min-height: 100%;
+}
+
+.fullheight-container {
+    height: 100%;
+}
+
+.centered-both {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered-vert {
+    display: flex;
+    align-items: center;
+}
+
+@mixin section {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    @include media-breakpoint-up(md) {
+        padding-top: $section-padding-md;
+        padding-bottom: $section-padding-md;
+    }
+}
+
+@mixin subsection {
+    padding-top: $section-padding;
+    @include media-breakpoint-up(md) {
+        padding-top: $section-padding-md;
+    }
+}
+
+@mixin section-last {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    margin-bottom: $footer-height;
+    @include media-breakpoint-up(md) {
+        padding-top: $section-padding-md;
+        padding-bottom: $section-padding-md;
+        margin-bottom: $footer-height-md;
+    }
+}
+
+@mixin activateArrowDown {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@mixin activateArrowRight {
+    opacity: 1;
+    transform: translateX(0);
+}

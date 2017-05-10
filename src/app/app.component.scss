@@ -1,7 +1,205 @@
-@import "../sass/vars";
+.nav-icon-container {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none; }
 
-:host {
-  display: block;
-  padding: 30px;
-  background-color: $color-gainsboro ;
-}
+@media (min-width: 768px) {
+  .nav-icon-container {
+    height: 90px; } }
+
+.nav-icon-container > .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+
+.nav-icon {
+  top: 0;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  margin-right: -15px;
+  cursor: pointer;
+  pointer-events: all; }
+
+@media (min-width: 768px) {
+  .nav-icon {
+    padding-top: 15px;
+    padding-bottom: 15px; } }
+
+.nav-icon:before, .nav-icon:after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  /* so, left and right 15px space. 30px of 60px used. */
+  width: 30px;
+  /* 20px is used. */
+  height: 4px;
+  background: #3d3d3d;
+  transition: transform, background .3s ease-out,-webkit-transform .3s ease-out; }
+
+.nav-icon:before {
+  top: 24px;
+  /* can't figure out this value */ }
+
+.nav-icon:after {
+  top: auto;
+  bottom: 24px;
+  /* this value should be the same, but idk why. probably sth with rad*/ }
+
+.nav-icon.opened:before {
+  transform: translateY(4px) rotate(135deg);
+  background: white; }
+
+.nav-icon.opened:after {
+  transform: translateY(-4px) rotate(45deg);
+  background: white; }
+
+.nav-overlay {
+  position: fixed;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .3s ease-out,-webkit-transform .3s ease-out;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: all; }
+
+.nav-overlay__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; }
+
+.nav-overlay__entry {
+  margin-top: .7rem;
+  margin-bottom: .7rem; }
+
+.nav-overlay__entry h1 {
+  color: white;
+  transition: color .3s ease-out,-webkit-transform .3s ease-out;
+  font-size: 2.6rem;
+  line-height: 1em;
+  user-select: none;
+  margin: 0; }
+
+@media (min-width: 768px) {
+  .nav-overlay__entry h1 {
+    font-size: 3.4rem; } }
+
+@media (min-width: 768px) {
+  .nav-overlay__entry:hover > h1 {
+    color: #FFF232; } }
+
+@media (min-width: 768px) {
+  .nav-overlay__entry {
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem; } }
+
+.nav-overlay__language-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px; }
+
+.nav-overlay__language {
+  color: white;
+  margin: 0 5px;
+  cursor: pointer;
+  user-select: none;
+  opacity: .4;
+  transition: opacity .3s ease-out,-webkit-transform .3s ease-out; }
+
+@media (min-width: 768px) {
+  .nav-overlay__language {
+    margin: 0 10px; } }
+
+.nav-overlay__language.active, .nav-overlay__language:hover {
+  opacity: 1; }
+
+.content {
+  height: 100%;
+  clear: both;
+  transition: opacity 1.2s ease; }
+
+.content.angular-ready {
+  animation: initial-fade-in 1s ease-out; }
+
+@keyframes initial-fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.routing {
+  transition: opacity .2s ease;
+  opacity: 0; }
+
+.footer {
+  height: 280px;
+  width: 100%;
+  background-color: #0c0c0c;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -500; }
+
+@media (min-width: 768px) {
+  .footer {
+    height: 480px; } }
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; }
+
+@media (min-width: 1200px) {
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between; } }
+
+.footer__logo {
+  margin-bottom: 20px; }
+
+.footer__primary {
+  margin-bottom: 15px;
+  color: white;
+  padding-right: 1em; }
+
+@media (min-width: 768px) {
+  .footer__primary {
+    font-size: 1.2rem; } }
+
+.footer__secondary {
+  color: #a4a4a4;
+  font-size: .8rem;
+  padding-right: 1em; }
+
+@media (min-width: 768px) {
+  .footer__secondary {
+    font-size: 1.2rem; } }
+
+.footer__description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+@media (min-width: 1200px) {
+  .footer__description-container {
+    flex-direction: row-reverse; } }

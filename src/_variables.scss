@@ -1,0 +1,42 @@
+// grid settings
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 566px,
+  md: 758px,
+  lg: 982px,
+  xl: 1190px
+);
+
+$grid-gutter-width-base:     30px;
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+);
+
+@import '../node_modules/bootstrap/scss/mixins';
+
+$font-family-sans-serif: Apercu, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+$title-font-size-mobile: 1.2rem;
+$title-font-size-desktop: 2rem;
+$font-color: #3d3d3d;
+$gray-dark: $font-color;
+$bg-grey: #F1F1F1;
+$brand-color: #FFF232;
+$secondary: #757575; 
+$footer-height: 280px;
+$footer-height-md: 480px;
+$section-padding: 80px;
+$section-padding-md: 120px;
+$icon-width: 30px;
+$icon-height: 4px;

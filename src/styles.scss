@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+// import settings
+@import './fonts';
+@import './variables';
+@import './app/global';
+
+html, body {
+    height: 100%;
+}
+
+// import bootstrap, grid only
+@import '../node_modules/bootstrap/scss/_variables.scss';
+@import '../node_modules/bootstrap/scss/_mixins.scss';
+@import '../node_modules/bootstrap/scss/_normalize.scss';
+@import '../node_modules/bootstrap/scss/_reboot.scss';
+@import '../node_modules/bootstrap/scss/_grid.scss';
